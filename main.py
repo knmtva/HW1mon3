@@ -43,7 +43,7 @@ async def help(message: types.Message):
 /help - помощь
 /myinfo - обо мне
 /picture - рандом картина
-    '''
+    ''')
 
 @dp.message_handler()
 async def echo(message: types.Message):
