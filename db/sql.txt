@@ -1,0 +1,48 @@
+PRIMARY KEY
+
+CREATE TABLE products (
+    products_id INTEGER PRIMARY KEY,
+    name TEXT,
+    description TEXT,
+    price INTEGER,
+    photo TEXT
+)
+
+CREATE TABLE orders (
+    order_id INTEGER PRIMARY KEY,
+    name TEXT,
+    userid TEXT,
+    address TEXT,
+    day TEXT
+    product_id INTEGER,
+    FOREIGN KEY (product_id)
+        REFERENCES products(product_id)
+)
+
+INSERT INTO products (
+    name,
+    description,
+    price,
+    photo
+) VALUES
+('Цезарь', 'вкусный салат', 350, 'media/zez.jpg'),
+('Оливье', 'новогодний салат', 260, 'media/olivie.jpg'),
+('Коктейль Мимоза', 'Апельсиновый коктейль самое то для тебя :), сладкое как и ты', 500, 'media/mimoza.jpg'),
+('Голубая лагуна', 'Освежающий коктейль для отличного вечера', 450, 'media/blue.jpg')
+SELECT * FROM products
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

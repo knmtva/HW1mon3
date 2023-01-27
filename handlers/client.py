@@ -2,7 +2,7 @@ from config import bot
 from aiogram import Dispatcher, types
 from keyboards.client_kb import start_markup
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
+from random import randint
 async def start_command(message: types.Message):
     markup = InlineKeyboardMarkup()
     button_call_1 = InlineKeyboardButton("МЕНЮ", callback_data="button_call_1")
@@ -23,7 +23,7 @@ username: {message.from_user.username}
     ''', reply_markup=start_markup)
 
 async def image_sender(message: types.Message):
-    a=randint(1, 2)
+    a= randint(1, 2)
     if a == 1:
         await message.answer_photo(open('C:/Users/Sabina/Pictures/о.jpg', 'rb'))
     else:
