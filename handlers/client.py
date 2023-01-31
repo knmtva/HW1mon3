@@ -3,6 +3,8 @@ from aiogram import Dispatcher, types
 from keyboards.client_kb import start_markup
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from random import randint
+from handlers.zinzin import s_command
+from aiogram.dispatcher.filters import Text
 async def start_command(message: types.Message):
     markup = InlineKeyboardMarkup()
     button_call_1 = InlineKeyboardButton("МЕНЮ", callback_data="button_call_1")
@@ -42,3 +44,4 @@ def register_handlers_clients(dp: Dispatcher):
     dp.register_message_handler(myinfo, commands="myinfo")
     dp.register_message_handler(image_sender, commands="picture")
     dp.register_message_handler(help, commands="help")
+    dp.register_message_handler(s_command, Text(startswith="Напомни"))
