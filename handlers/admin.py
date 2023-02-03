@@ -1,4 +1,3 @@
-from config import bot, dp
 from aiogram import types, Dispatcher
 
 async def check_user_is_admin(message: types.Message):

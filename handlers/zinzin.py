@@ -16,6 +16,7 @@ async def notice():
         chat_id=chat_id,
         text=clock
     )
+
 async def binbon():
     aioschedule.every(5).seconds.do(notice)
     while True:

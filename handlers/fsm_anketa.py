@@ -95,11 +95,11 @@ def register_handlers_anketa(dp: Dispatcher):
                                 Text(equals='cancel', ignore_case=True),
                                 state='*')
 
+    '''анкета'''
     dp.register_message_handler(load_name, Text(equals='НЕТ'), state=FSMAdmin.done)
     dp.register_callback_query_handler(fsm_start, Text(startswith=['fsm_start']))
     dp.register_message_handler(load_name, state=FSMAdmin.name)
     dp.register_message_handler(load_age, state=FSMAdmin.age)
     dp.register_message_handler(load_gender, state=FSMAdmin.gender)
     dp.register_message_handler(load_region, state=FSMAdmin.region)
-    # dp.register_message_handler(load_photo, state=FSMAdmin.photo)
     dp.register_message_handler(submit, Text(equals='ДА'), state=FSMAdmin.done)
